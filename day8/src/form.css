@@ -1,0 +1,10 @@
+/* element selector */
+body {
+    /* 1.2 times of the current page. em is the unit. never hard code the size of text (in px) */
+    font-size: 1.2em;
+    font-family: monospace;
+}
+h2 {
+    color: pink;
+    text-decoration: underline;
+}

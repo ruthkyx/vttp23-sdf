@@ -1,0 +1,9 @@
+creating feature branch:
+1. open terminal & cd into directory containing shoppingCart.java. do this:
+
+# Create a new branch
+git branch feature/cart-database
+# Switch to the new branch
+git checkout feature/cart-database
+
+
