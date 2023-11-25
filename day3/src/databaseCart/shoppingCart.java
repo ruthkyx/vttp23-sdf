@@ -1,15 +1,23 @@
 package databaseCart;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 
 public class shoppingCart {
 
     public boolean loggedIn = false; 
+    private static String cartDatabaseDir = "db";
 
     public static void main(String[] args) throws Exception {
 
         System.out.println("HELLO!! Welcome to your shopping cart!!");
+
+        // check if a directory is specified as a command-line argument
+        if(args.length > 0) {
+            cartDatabaseDir = args[0];
+        }
 
         LinkedList<String> cartList = new LinkedList<> ();
         Scanner sc = new Scanner(System.in);
@@ -19,6 +27,8 @@ public class shoppingCart {
             String input = sc.nextLine().toLowerCase().trim();
 
             if (input.startsWith("login")) {
+                // read user input & scan if user exist
+                System.out.print("Please input your username: ");
                 userLogin(input.substring(6).trim());
 
             } else if (input.startsWith("save")) {
@@ -98,11 +108,9 @@ public class shoppingCart {
     }
 
     private static void userLogin (String username) {
-        // if the user has no acc, print smth to prompt creation && create new dir in the db? think whether to do this in the db class or here
-
+        // if the user has no acc, print smth to prompt creation && create new dir in the db?
         // create an instance of the database 
         shoppingCartDB database = new shoppingCartDB(username);
-        String dirPath;
         
     }
 
@@ -112,8 +120,8 @@ public class shoppingCart {
     }
 
     private static void userList() {
-
-        System.out.println();
+        List<String> allUsers = new ArrayList<>();
+        System.out.println(allUsers);
 
     }
 }
