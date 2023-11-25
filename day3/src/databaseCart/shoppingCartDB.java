@@ -1,5 +1,6 @@
 package databaseCart;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -22,6 +23,7 @@ public class shoppingCartDB {
     protected void userExists (String directoryPath) {
         Path dirPath = dirPath.getFileName();
         // cartdb/fred.db
+        // File cartdb = new File(username + ".db");
         if (!dirPath.exists()){
             // .mkdirs();
         } else {
@@ -32,29 +34,25 @@ public class shoppingCartDB {
     }
 
     protected void saveCart() {
-        FileWriter = new FileWriter();
+        FileWriter userFile = new FileWriter();
+        BufferedWriter userCartItems = new BufferedWriter(userFile);
     }    
 
     protected Map<String, List<String>> loadCart(String username) {
         // to load the user's cart
         
+        Map<String, List<String>> userCart = new 
+
         File userFile = new File(username);
         boolean userExists = userFile.exists();
         if (userExists) {  
             FileReader readCart = new FileReader(userFile); 
-            for (String items : readCart) {
+            for (String items : userFile) {
                 System.out.println(items);
             }
         }
 
         
-    }
-
-    File cartdb = new File(username + ".db");
-
-    // if user exists 
-    public void userDir (String dirName) {
-        File userFile = new File();
     }
 
 }
